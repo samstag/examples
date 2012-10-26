@@ -38,13 +38,13 @@ struct example_fitness : fitness_function<unary_fitness<double>, constantS, abso
     
 	template <typename Individual, typename RNG, typename EA>
 	double operator()(Individual& ind, RNG& rng, EA& ea) {
-        mkv::markov_network mkv(get<MKV_INPUT_N>(ea), 
+        mkv::markov_network net(get<MKV_INPUT_N>(ea),
                                get<MKV_OUTPUT_N>(ea), 
                                get<MKV_HIDDEN_N>(ea),
                                rng);
 
         // build a markov network from the individual's genome:
-        mkv::build_markov_network(mkv, ind.repr().begin(), ind.repr().end(), ea);
+        mkv::build_markov_network(net, ind.repr().begin(), ind.repr().end(), ea);
         
         // allocate space for the inputs & outputs:
         std::vector<int> inputs(get<MKV_INPUT_N>(ea), 0);
@@ -53,7 +53,7 @@ struct example_fitness : fitness_function<unary_fitness<double>, constantS, abso
         // now, set the values of the bits in the input vector:
         
         // update the network n times:
-        update_n(get<MKV_UPDATE_N>(ea), mkv, inputs, outputs);
+        update(net, get<MKV_UPDATE_N>(ea), inputs.begin(), outputs.begin());
 
         // calculate fitness based on the outputs...
         
@@ -97,19 +97,15 @@ public:
         add_option<MKV_OUTPUT_N>(this);
         add_option<MKV_HIDDEN_N>(this);
         add_option<MKV_UPDATE_N>(this);
-        add_option<MKV_NODE_TYPES>(this);
-        add_option<MKV_INITIAL_NODES>(this);
+        add_option<MKV_GATE_TYPES>(this);
+        add_option<MKV_INITIAL_GATES>(this);
         add_option<MKV_REPR_INITIAL_SIZE>(this);
         add_option<MKV_REPR_MAX_SIZE>(this);
         add_option<MKV_REPR_MIN_SIZE>(this);
-        add_option<NODE_WV_STEPS>(this);
-        add_option<NODE_ALLOW_ZERO>(this);
-        add_option<NODE_INPUT_LIMIT>(this);
-        add_option<NODE_INPUT_FLOOR>(this);
-        add_option<NODE_OUTPUT_LIMIT>(this);
-        add_option<NODE_OUTPUT_FLOOR>(this);
-        add_option<NODE_HISTORY_LIMIT>(this);
-        add_option<NODE_HISTORY_FLOOR>(this);
+        add_option<GATE_INPUT_LIMIT>(this);
+        add_option<GATE_INPUT_FLOOR>(this);
+        add_option<GATE_OUTPUT_LIMIT>(this);
+        add_option<GATE_OUTPUT_FLOOR>(this);
         
         // ea options
         add_option<REPRESENTATION_SIZE>(this);
