@@ -53,7 +53,7 @@ struct example_fitness : fitness_function<unary_fitness<double>, constantS, abso
         // now, set the values of the bits in the input vector:
         
         // update the network n times:
-        update(net, get<MKV_UPDATE_N>(ea), inputs.begin(), outputs.begin());
+        update(net, get<MKV_UPDATE_N>(ea), inputs.begin());
 
         // calculate fitness based on the outputs...
         
@@ -78,7 +78,7 @@ struct configuration : public abstract_configuration<EA> {
 //! Evolutionary algorithm definition.
 typedef evolutionary_algorithm<
 circular_genome<int>,
-mkv_mutation,
+mkv_smart_mutation,
 example_fitness,
 configuration,
 recombination::asexual,
@@ -102,10 +102,15 @@ public:
         add_option<MKV_REPR_INITIAL_SIZE>(this);
         add_option<MKV_REPR_MAX_SIZE>(this);
         add_option<MKV_REPR_MIN_SIZE>(this);
+        add_option<GATE_LAYER_LIMIT>(this);
+        add_option<GATE_LAYER_FLOOR>(this);
         add_option<GATE_INPUT_LIMIT>(this);
         add_option<GATE_INPUT_FLOOR>(this);
         add_option<GATE_OUTPUT_LIMIT>(this);
         add_option<GATE_OUTPUT_FLOOR>(this);
+        add_option<GATE_HISTORY_LIMIT>(this);
+        add_option<GATE_HISTORY_FLOOR>(this);
+        add_option<GATE_WV_STEPS>(this);
         
         // ea options
         add_option<REPRESENTATION_SIZE>(this);

@@ -501,10 +501,6 @@
 		429B1C9C162ED75E00578A1C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../DerivedData/research/Build/Products/Debug\"",
-				);
 				PRODUCT_NAME = all_ones;
 			};
 			name = Debug;
@@ -512,10 +508,6 @@
 		429B1C9D162ED75E00578A1C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../DerivedData/research/Build/Products/Debug\"",
-				);
 				PRODUCT_NAME = all_ones;
 			};
 			name = Release;
@@ -669,6 +661,7 @@
 				42E7887716436745001443E0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		42E7888716436981001443E0 /* Build configuration list for PBXNativeTarget "example_2" */ = {
 			isa = XCConfigurationList;
@@ -677,6 +670,7 @@
 				42E7888916436981001443E0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
