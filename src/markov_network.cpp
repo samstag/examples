@@ -102,8 +102,6 @@ public:
         add_option<MKV_REPR_INITIAL_SIZE>(this);
         add_option<MKV_REPR_MAX_SIZE>(this);
         add_option<MKV_REPR_MIN_SIZE>(this);
-        add_option<GATE_LAYER_LIMIT>(this);
-        add_option<GATE_LAYER_FLOOR>(this);
         add_option<GATE_INPUT_LIMIT>(this);
         add_option<GATE_INPUT_FLOOR>(this);
         add_option<GATE_OUTPUT_LIMIT>(this);
