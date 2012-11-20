@@ -62,7 +62,7 @@ struct example_fitness : fitness_function<unary_fitness<double>, constantS, abso
         // now, set the values of the bits in the input vector:
         
         // update the network n times:
-        update(net, get<MKV_UPDATE_N>(ea), inputs.begin(), outputs.begin());
+        update(net, get<MKV_UPDATE_N>(ea), inputs.begin());
         
         // calculate fitness based on the outputs...
         
