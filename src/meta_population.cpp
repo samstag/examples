@@ -122,6 +122,9 @@ public:
         add_option<GATE_INPUT_FLOOR>(this);
         add_option<GATE_OUTPUT_LIMIT>(this);
         add_option<GATE_OUTPUT_FLOOR>(this);
+        add_option<GATE_HISTORY_LIMIT>(this);
+        add_option<GATE_HISTORY_FLOOR>(this);
+        add_option<GATE_WV_STEPS>(this);
         
         // ea options
         add_option<REPRESENTATION_SIZE>(this);
