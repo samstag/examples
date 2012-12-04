@@ -38,17 +38,15 @@ struct example_fitness : fitness_function<unary_fitness<double>, constantS, abso
     
 	template <typename Individual, typename RNG, typename EA>
 	double operator()(Individual& ind, RNG& rng, EA& ea) {
-        mkv::markov_network net(get<MKV_INPUT_N>(ea),
-                               get<MKV_OUTPUT_N>(ea), 
-                               get<MKV_HIDDEN_N>(ea),
-                               rng);
+        using namespace mkv;
+        
+        markov_network net(make_markov_network_desc(get<MKV_DESC>(ea)), rng);
 
         // build a markov network from the individual's genome:
         mkv::build_markov_network(net, ind.repr().begin(), ind.repr().end(), ea);
         
         // allocate space for the inputs & outputs:
-        std::vector<int> inputs(get<MKV_INPUT_N>(ea), 0);
-        std::vector<int> outputs(get<MKV_OUTPUT_N>(ea));
+        std::vector<int> inputs(net.ninput_states(), 0);
         
         // now, set the values of the bits in the input vector:
         
@@ -93,9 +91,7 @@ class cli : public cmdline_interface<EA> {
 public:
     virtual void gather_options() {
         // markov network options
-        add_option<MKV_INPUT_N>(this);
-        add_option<MKV_OUTPUT_N>(this);
-        add_option<MKV_HIDDEN_N>(this);
+        add_option<MKV_DESC>(this);
         add_option<MKV_UPDATE_N>(this);
         add_option<MKV_GATE_TYPES>(this);
         add_option<MKV_INITIAL_GATES>(this);
