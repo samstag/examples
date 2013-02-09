@@ -1,6 +1,6 @@
 /* meta_population.cpp
  * 
- * This file is part of EALib.
+ * This file is part of EALib Examples.
  * 
  * Copyright 2012 David B. Knoester.
  * 

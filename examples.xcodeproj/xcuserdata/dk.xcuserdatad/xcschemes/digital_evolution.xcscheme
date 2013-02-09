@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "429B1C8E162ED75E00578A1C"
-               BuildableName = "all_ones"
-               BlueprintName = "all_ones"
+               BlueprintIdentifier = "423FAA4D16C29E5400D832FB"
+               BuildableName = "digital_evolution"
+               BlueprintName = "digital_evolution"
                ReferencedContainer = "container:examples.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,9 +32,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "429B1C8E162ED75E00578A1C"
-            BuildableName = "all_ones"
-            BlueprintName = "all_ones"
+            BlueprintIdentifier = "423FAA4D16C29E5400D832FB"
+            BuildableName = "digital_evolution"
+            BlueprintName = "digital_evolution"
             ReferencedContainer = "container:examples.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -51,9 +51,9 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "429B1C8E162ED75E00578A1C"
-            BuildableName = "all_ones"
-            BlueprintName = "all_ones"
+            BlueprintIdentifier = "423FAA4D16C29E5400D832FB"
+            BuildableName = "digital_evolution"
+            BlueprintName = "digital_evolution"
             ReferencedContainer = "container:examples.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -69,9 +69,9 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "429B1C8E162ED75E00578A1C"
-            BuildableName = "all_ones"
-            BlueprintName = "all_ones"
+            BlueprintIdentifier = "423FAA4D16C29E5400D832FB"
+            BuildableName = "digital_evolution"
+            BlueprintName = "digital_evolution"
             ReferencedContainer = "container:examples.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

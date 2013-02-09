@@ -1,19 +1,19 @@
-/* all_ones.cpp
- * 
+/* lod_tracking.cpp
+ *
  * This file is part of EALib Examples.
- * 
+ *
  * Copyright 2012 David B. Knoester.
- * 
+ *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
@@ -21,6 +21,7 @@
 #include <ea/representations/bitstring.h>
 #include <ea/cmdline_interface.h>
 #include <ea/datafiles/fitness.h>
+#include <ea/line_of_descent.h>
 using namespace ea;
 
 
@@ -38,8 +39,8 @@ struct all_ones : public fitness_function<unary_fitness<double> > {
  of the EA.
  */
 template <typename EA>
-struct configuration : public abstract_configuration<EA> {    
-    /*! Called to generate the initial population, in this case, a population of 
+struct configuration : public abstract_configuration<EA> {
+    /*! Called to generate the initial population, in this case, a population of
      random bitstrings.
      */
     void initial_population(EA& ea) {
@@ -51,6 +52,8 @@ struct configuration : public abstract_configuration<EA> {
 /*! Evolutionary algorithm definition.  EAs are assembled by providing a series of
  components (representation, selection type, mutation operator, etc.) as template
  parameters.
+ 
+ In this example, we also turn on line-of-descent tracking by 
  */
 typedef evolutionary_algorithm<
 bitstring, // representation
@@ -58,7 +61,10 @@ mutation::per_site<mutation::bitflip>, // mutation operator
 all_ones, // fitness function
 configuration, // user-defined configuration methods
 recombination::asexual, // recombination operator
-generational_models::steady_state<selection::proportionate< >, selection::tournament< > > // generational model
+generational_models::steady_state<selection::proportionate< >, selection::tournament< > >, // generational model
+directS, // encoding type; experimental, do not use
+default_ea_attributes, // individual attributes
+lod_individual // using an lod individual automatically turns on LOD tracking.
 > ea_type;
 
 
@@ -86,6 +92,8 @@ public:
     //! Define events (e.g., datafiles) here.
     virtual void gather_events(EA& ea) {
         add_event<datafiles::fitness>(this, ea);
+        add_event<lod_event>(this, ea);
+        add_event<mrca_lineage_datafile>(this, ea);
     };
 };
 

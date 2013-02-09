@@ -1,6 +1,6 @@
 /* main.cpp
  * 
- * This file is part of Learning Bot.
+ * This file is part of EALib Examples.
  * 
  * Copyright 2012 David B. Knoester.
  * 
