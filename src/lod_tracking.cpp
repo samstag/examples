@@ -64,7 +64,7 @@ recombination::asexual, // recombination operator
 generational_models::steady_state<selection::proportionate< >, selection::tournament< > >, // generational model
 directS, // encoding type; experimental, do not use
 default_ea_attributes, // individual attributes
-lod_individual // using an lod individual automatically turns on LOD tracking.
+individual_lod // using an lod individual automatically turns on LOD tracking.
 > ea_type;
 
 
