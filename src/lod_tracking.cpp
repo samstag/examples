@@ -22,7 +22,7 @@
 #include <ea/cmdline_interface.h>
 #include <ea/datafiles/fitness.h>
 #include <ea/line_of_descent.h>
-using namespace ea;
+using namespace ealib;
 
 
 /*! Fitness function that rewards for the number of ones in the genome.
@@ -62,8 +62,7 @@ all_ones, // fitness function
 configuration, // user-defined configuration methods
 recombination::asexual, // recombination operator
 generational_models::steady_state<selection::proportionate< >, selection::tournament< > >, // generational model
-directS, // encoding type; experimental, do not use
-default_ea_attributes, // individual attributes
+default_attributes, // individual attributes
 individual_lod // using an lod individual automatically turns on LOD tracking.
 > ea_type;
 

@@ -13,6 +13,7 @@
 			buildPhases = (
 			);
 			dependencies = (
+				42508B12171333510068025D /* PBXTargetDependency */,
 				4281FF1616C70C290066610C /* PBXTargetDependency */,
 				4281FF0516C70A9E0066610C /* PBXTargetDependency */,
 				429B1CC4162EDCFB00578A1C /* PBXTargetDependency */,
@@ -28,6 +29,9 @@
 		423FAA5116C29E5400D832FB /* libea.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 429B1C7B162DBA5300578A1C /* libea.a */; };
 		423FAA5216C29E5400D832FB /* libmkv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 429B1C7C162DBA5300578A1C /* libmkv.a */; };
 		423FAA5E16C29EE600D832FB /* digital_evolution.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 423FAA5B16C29EC400D832FB /* digital_evolution.cpp */; };
+		42508B0A171333410068025D /* libea.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 429B1C7B162DBA5300578A1C /* libea.a */; };
+		42508B0B171333410068025D /* libmkv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 429B1C7C162DBA5300578A1C /* libmkv.a */; };
+		42508B15171333850068025D /* qhfc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 42508B13171333850068025D /* qhfc.cpp */; };
 		4281FF0B16C70BF00066610C /* libea.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 429B1C7B162DBA5300578A1C /* libea.a */; };
 		4281FF1416C70C1C0066610C /* lod_tracking.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4281FF1216C70C1C0066610C /* lod_tracking.cpp */; };
 		429B1C7D162DBA5300578A1C /* libea.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 429B1C7B162DBA5300578A1C /* libea.a */; };
@@ -41,6 +45,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		42508B11171333510068025D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 429B1C41162DB8DE00578A1C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 42508B06171333410068025D;
+			remoteInfo = qhfc;
+		};
 		4281FF0416C70A9E0066610C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 429B1C41162DB8DE00578A1C /* Project object */;
@@ -80,6 +91,15 @@
 
 /* Begin PBXCopyFilesBuildPhase section */
 		423FAA5316C29E5400D832FB /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		42508B0C171333410068025D /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -130,6 +150,10 @@
 		423FAA5716C29E5400D832FB /* digital_evolution */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = digital_evolution; sourceTree = BUILT_PRODUCTS_DIR; };
 		423FAA5A16C29EB800D832FB /* digital_evolution.cfg */ = {isa = PBXFileReference; lastKnownFileType = text; path = digital_evolution.cfg; sourceTree = "<group>"; };
 		423FAA5B16C29EC400D832FB /* digital_evolution.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = digital_evolution.cpp; sourceTree = "<group>"; };
+		42508B10171333410068025D /* qhfc */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = qhfc; sourceTree = BUILT_PRODUCTS_DIR; };
+		42508B13171333850068025D /* qhfc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = qhfc.cpp; sourceTree = "<group>"; };
+		42508B14171333850068025D /* qhfc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qhfc.h; sourceTree = "<group>"; };
+		42508B16171336330068025D /* qhfc.cfg */ = {isa = PBXFileReference; lastKnownFileType = text; path = qhfc.cfg; sourceTree = "<group>"; };
 		4281FF1016C70BF00066610C /* lod_tracking */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = lod_tracking; sourceTree = BUILT_PRODUCTS_DIR; };
 		4281FF1216C70C1C0066610C /* lod_tracking.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lod_tracking.cpp; sourceTree = "<group>"; };
 		429B1C4A162DB8DF00578A1C /* markov_network */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = markov_network; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,6 +179,15 @@
 			files = (
 				423FAA5116C29E5400D832FB /* libea.a in Frameworks */,
 				423FAA5216C29E5400D832FB /* libmkv.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42508B09171333410068025D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42508B0A171333410068025D /* libea.a in Frameworks */,
+				42508B0B171333410068025D /* libmkv.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,6 +248,7 @@
 				429B1CB8162ED86B00578A1C /* meta_population */,
 				423FAA5716C29E5400D832FB /* digital_evolution */,
 				4281FF1016C70BF00066610C /* lod_tracking */,
+				42508B10171333410068025D /* qhfc */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -226,6 +260,7 @@
 				423FAA5A16C29EB800D832FB /* digital_evolution.cfg */,
 				429B1CC9162EE0EC00578A1C /* meta_population.cfg */,
 				429B1CCA162EE0EC00578A1C /* markov_network.cfg */,
+				42508B16171336330068025D /* qhfc.cfg */,
 				429B1C5E162DB94800578A1C /* template.xcconfig */,
 			);
 			path = etc;
@@ -239,6 +274,8 @@
 				429B1CA7162ED84E00578A1C /* meta_population.cpp */,
 				429B1CA8162ED84E00578A1C /* markov_network.cpp */,
 				423FAA5B16C29EC400D832FB /* digital_evolution.cpp */,
+				42508B13171333850068025D /* qhfc.cpp */,
+				42508B14171333850068025D /* qhfc.h */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -270,6 +307,23 @@
 			name = digital_evolution;
 			productName = template;
 			productReference = 423FAA5716C29E5400D832FB /* digital_evolution */;
+			productType = "com.apple.product-type.tool";
+		};
+		42508B06171333410068025D /* qhfc */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42508B0D171333410068025D /* Build configuration list for PBXNativeTarget "qhfc" */;
+			buildPhases = (
+				42508B07171333410068025D /* Sources */,
+				42508B09171333410068025D /* Frameworks */,
+				42508B0C171333410068025D /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = qhfc;
+			productName = template;
+			productReference = 42508B10171333410068025D /* qhfc */;
 			productType = "com.apple.product-type.tool";
 		};
 		4281FF0716C70BF00066610C /* lod_tracking */ = {
@@ -366,6 +420,7 @@
 				429B1CA9162ED86B00578A1C /* meta_population */,
 				423FAA4D16C29E5400D832FB /* digital_evolution */,
 				4281FF0716C70BF00066610C /* lod_tracking */,
+				42508B06171333410068025D /* qhfc */,
 				429B1CBF162EDCEA00578A1C /* all */,
 			);
 		};
@@ -377,6 +432,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				423FAA5E16C29EE600D832FB /* digital_evolution.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42508B07171333410068025D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42508B15171333850068025D /* qhfc.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +478,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		42508B12171333510068025D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 42508B06171333410068025D /* qhfc */;
+			targetProxy = 42508B11171333510068025D /* PBXContainerItemProxy */;
+		};
 		4281FF0516C70A9E0066610C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 423FAA4D16C29E5400D832FB /* digital_evolution */;
@@ -455,6 +523,28 @@
 			name = Debug;
 		};
 		423FAA5616C29E5400D832FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../DerivedData/research/Build/Products/Debug\"",
+				);
+				PRODUCT_NAME = $TARGET_NAME;
+			};
+			name = Release;
+		};
+		42508B0E171333410068025D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../DerivedData/research/Build/Products/Debug\"",
+				);
+				PRODUCT_NAME = $TARGET_NAME;
+			};
+			name = Debug;
+		};
+		42508B0F171333410068025D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				LIBRARY_SEARCH_PATHS = (
@@ -597,6 +687,15 @@
 			buildConfigurations = (
 				423FAA5516C29E5400D832FB /* Debug */,
 				423FAA5616C29E5400D832FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		42508B0D171333410068025D /* Build configuration list for PBXNativeTarget "qhfc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42508B0E171333410068025D /* Debug */,
+				42508B0F171333410068025D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

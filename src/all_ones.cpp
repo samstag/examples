@@ -21,7 +21,7 @@
 #include <ea/representations/bitstring.h>
 #include <ea/cmdline_interface.h>
 #include <ea/datafiles/fitness.h>
-using namespace ea;
+using namespace ealib;
 
 
 /*! Fitness function that rewards for the number of ones in the genome.

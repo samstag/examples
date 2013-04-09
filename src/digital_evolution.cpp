@@ -20,7 +20,7 @@
 
 #include <ea/digital_evolution.h>
 #include <ea/cmdline_interface.h>
-using namespace ea;
+using namespace ealib;
 
 /*! Configures an instance of digital evolution in a manner similar to Avida.
  
@@ -34,8 +34,8 @@ struct configuration : public abstract_configuration<EA> {
     typedef typename EA::environment_type::resource_ptr_type resource_ptr_type;
         
     //! Called as the final step of EA construction (must not depend on configuration parameters)
-    void construct(EA& ea) {
-        using namespace ea::instructions;
+    void configure(EA& ea) {
+        using namespace ealib::instructions;
         append_isa<nop_a>(0,ea);
         append_isa<nop_b>(0,ea);
         append_isa<nop_c>(0,ea);

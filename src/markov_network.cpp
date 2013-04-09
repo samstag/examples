@@ -24,12 +24,12 @@
 #include <ea/cmdline_interface.h>
 #include <ea/datafiles/fitness.h>
 #include <ea/markov_network.h>
-using namespace ea;
+using namespace ealib;
 
 
 /*! Sample fitness function for Markov networks.
  */
-struct example_fitness : fitness_function<unary_fitness<double>, constantS, absoluteS, stochasticS> {
+struct example_fitness : fitness_function<unary_fitness<double>, constantS, stochasticS> {
     
     /*! Initialize this fitness function -- load data, etc. */
     template <typename RNG, typename EA>

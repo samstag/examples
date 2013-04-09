@@ -27,7 +27,7 @@
 #include <ea/meta_population.h>
 #include <ea/island_model.h>
 #include <ea/selection/elitism.h>
-using namespace ea;
+using namespace ealib;
 
 /* This example defines an island model GA, where each individual represents a
  markov network.  The key to understanding meta-populations in EALib is that *each*
@@ -38,7 +38,7 @@ using namespace ea;
 
 /*! Sample fitness function for Markov networks.
  */
-struct example_fitness : fitness_function<unary_fitness<double>, constantS, absoluteS, stochasticS> {
+struct example_fitness : fitness_function<unary_fitness<double>, constantS, stochasticS> {
     
     /*! Initialize this fitness function -- load data, etc. */
     template <typename RNG, typename EA>
