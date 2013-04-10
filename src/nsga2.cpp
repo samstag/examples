@@ -22,17 +22,9 @@
 #include <ea/generational_models/qhfc.h>
 #include <ea/representations/bitstring.h>
 #include <ea/cmdline_interface.h>
+#include <ea/fitness_functions/all_ones.h>
+#include <ea/generational_models/nsga2.h>
 using namespace ealib;
-
-/*! Fitness function that rewards for the number of ones in the genome.
- */
-struct all_ones : public fitness_function<unary_fitness<double> > {
-    template <typename Individual, typename EA>
-    double operator()(Individual& ind, EA& ea) {
-        return static_cast<double>(std::count(ind.repr().begin(), ind.repr().end(), 1u));
-    }
-};
-
 
 /*! User-defined configuration struct; called at various points during initialization
  of the EA.
@@ -45,26 +37,18 @@ struct configuration : public abstract_configuration<EA> {
     void initial_population(EA& ea) {
         generate_ancestors(ancestors::random_bitstring(), get<POPULATION_SIZE>(ea), ea);
     }
-    
-    //! Called to fill a population to capacity.
-    void fill_population(EA& ea) {
-        generate_ancestors(ancestors::random_bitstring(), get<POPULATION_SIZE>(ea)-ea.size(), ea);
-    }
 };
+
 
 typedef evolutionary_algorithm<
 bitstring,
 mutation::per_site<mutation::bit>,
-all_ones,
+multi_all_ones,
 configuration,
 recombination::two_point_crossover,
-generational_models::deterministic_crowding< > > ea_type;
-
-template <typename EA>
-struct mp_configuration : public abstract_configuration<EA> {
-};
-
-typedef meta_population<ea_type, mp_configuration, generational_models::qhfc> mea_type;
+generational_models::nsga2,
+nsga2_attributes
+> ea_type;
 
 
 /*! Define the EA's command-line interface.
@@ -75,14 +59,9 @@ public:
     virtual void gather_options() {
         add_option<POPULATION_SIZE>(this);
         add_option<REPRESENTATION_SIZE>(this);
-        add_option<META_POPULATION_SIZE>(this);
         add_option<MUTATION_PER_SITE_P>(this);
-        add_option<ELITISM_N>(this);
-        add_option<QHFC_BREED_TOP_FREQ>(this);
-        add_option<QHFC_DETECT_EXPORT_NUM>(this);
-        add_option<QHFC_PERCENT_REFILL>(this);
-        add_option<QHFC_CATCHUP_GEN>(this);
-        add_option<QHFC_NO_PROGRESS_GEN>(this);
+        add_option<TOURNAMENT_SELECTION_N>(this);
+        add_option<TOURNAMENT_SELECTION_K>(this);
         add_option<RUN_UPDATES>(this);
         add_option<RUN_EPOCHS>(this);
         add_option<CHECKPOINT_OFF>(this);
@@ -92,7 +71,6 @@ public:
     }
     
     virtual void gather_events(EA& ea) {
-        add_event<datafiles::qhfc>(this, ea);
     };
 };
-LIBEA_CMDLINE_INSTANCE(mea_type, cli);
+LIBEA_CMDLINE_INSTANCE(ea_type, cli);

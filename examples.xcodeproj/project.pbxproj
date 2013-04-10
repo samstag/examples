@@ -33,7 +33,6 @@
 		42508B0A171333410068025D /* libea.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 429B1C7B162DBA5300578A1C /* libea.a */; };
 		42508B0B171333410068025D /* libmkv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 429B1C7C162DBA5300578A1C /* libmkv.a */; };
 		42508B15171333850068025D /* qhfc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 42508B13171333850068025D /* qhfc.cpp */; };
-		4262336F17158C2900D3117E /* qhfc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 42508B13171333850068025D /* qhfc.cpp */; };
 		4262337117158C2900D3117E /* libea.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 429B1C7B162DBA5300578A1C /* libea.a */; };
 		4262337217158C2900D3117E /* libmkv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 429B1C7C162DBA5300578A1C /* libmkv.a */; };
 		4262337C17158C5F00D3117E /* nsga2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4262337A17158C5F00D3117E /* nsga2.cpp */; };
@@ -176,6 +175,7 @@
 		42508B16171336330068025D /* qhfc.cfg */ = {isa = PBXFileReference; lastKnownFileType = text; path = qhfc.cfg; sourceTree = "<group>"; };
 		4262337717158C2900D3117E /* nsga2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = nsga2; sourceTree = BUILT_PRODUCTS_DIR; };
 		4262337A17158C5F00D3117E /* nsga2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = nsga2.cpp; sourceTree = "<group>"; };
+		4262337D1715930D00D3117E /* nsga2.cfg */ = {isa = PBXFileReference; lastKnownFileType = text; path = nsga2.cfg; sourceTree = "<group>"; };
 		4281FF1016C70BF00066610C /* lod_tracking */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = lod_tracking; sourceTree = BUILT_PRODUCTS_DIR; };
 		4281FF1216C70C1C0066610C /* lod_tracking.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lod_tracking.cpp; sourceTree = "<group>"; };
 		429B1C4A162DB8DF00578A1C /* markov_network */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = markov_network; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -292,6 +292,7 @@
 				423FAA5A16C29EB800D832FB /* digital_evolution.cfg */,
 				429B1CC9162EE0EC00578A1C /* meta_population.cfg */,
 				429B1CCA162EE0EC00578A1C /* markov_network.cfg */,
+				4262337D1715930D00D3117E /* nsga2.cfg */,
 				42508B16171336330068025D /* qhfc.cfg */,
 				429B1C5E162DB94800578A1C /* template.xcconfig */,
 			);
@@ -497,7 +498,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4262336F17158C2900D3117E /* qhfc.cpp in Sources */,
 				4262337C17158C5F00D3117E /* nsga2.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
