@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "42508B06171333410068025D"
-               BuildableName = "meta_population copy"
+               BuildableName = "qhfc"
                BlueprintName = "qhfc"
                ReferencedContainer = "container:examples.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "42508B06171333410068025D"
-            BuildableName = "meta_population copy"
+            BuildableName = "qhfc"
             BlueprintName = "qhfc"
             ReferencedContainer = "container:examples.xcodeproj">
          </BuildableReference>
@@ -53,7 +53,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "42508B06171333410068025D"
-            BuildableName = "meta_population copy"
+            BuildableName = "qhfc"
             BlueprintName = "qhfc"
             ReferencedContainer = "container:examples.xcodeproj">
          </BuildableReference>
@@ -77,7 +77,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "42508B06171333410068025D"
-            BuildableName = "meta_population copy"
+            BuildableName = "qhfc"
             BlueprintName = "qhfc"
             ReferencedContainer = "container:examples.xcodeproj">
          </BuildableReference>

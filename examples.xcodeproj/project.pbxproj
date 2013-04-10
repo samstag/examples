@@ -152,7 +152,6 @@
 		423FAA5B16C29EC400D832FB /* digital_evolution.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = digital_evolution.cpp; sourceTree = "<group>"; };
 		42508B10171333410068025D /* qhfc */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = qhfc; sourceTree = BUILT_PRODUCTS_DIR; };
 		42508B13171333850068025D /* qhfc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = qhfc.cpp; sourceTree = "<group>"; };
-		42508B14171333850068025D /* qhfc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qhfc.h; sourceTree = "<group>"; };
 		42508B16171336330068025D /* qhfc.cfg */ = {isa = PBXFileReference; lastKnownFileType = text; path = qhfc.cfg; sourceTree = "<group>"; };
 		4281FF1016C70BF00066610C /* lod_tracking */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = lod_tracking; sourceTree = BUILT_PRODUCTS_DIR; };
 		4281FF1216C70C1C0066610C /* lod_tracking.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lod_tracking.cpp; sourceTree = "<group>"; };
@@ -275,7 +274,6 @@
 				429B1CA8162ED84E00578A1C /* markov_network.cpp */,
 				423FAA5B16C29EC400D832FB /* digital_evolution.cpp */,
 				42508B13171333850068025D /* qhfc.cpp */,
-				42508B14171333850068025D /* qhfc.h */,
 			);
 			path = src;
 			sourceTree = "<group>";
