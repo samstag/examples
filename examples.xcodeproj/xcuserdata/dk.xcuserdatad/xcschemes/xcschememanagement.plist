@@ -34,6 +34,11 @@
 			<key>orderHint</key>
 			<integer>20</integer>
 		</dict>
+		<key>qhfc copy.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>38</integer>
+		</dict>
 		<key>qhfc.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -48,6 +53,11 @@
 			<true/>
 		</dict>
 		<key>42508B06171333410068025D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4262336D17158C2900D3117E</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -13,6 +13,7 @@
 			buildPhases = (
 			);
 			dependencies = (
+				4262337917158C4500D3117E /* PBXTargetDependency */,
 				42508B12171333510068025D /* PBXTargetDependency */,
 				4281FF1616C70C290066610C /* PBXTargetDependency */,
 				4281FF0516C70A9E0066610C /* PBXTargetDependency */,
@@ -32,6 +33,10 @@
 		42508B0A171333410068025D /* libea.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 429B1C7B162DBA5300578A1C /* libea.a */; };
 		42508B0B171333410068025D /* libmkv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 429B1C7C162DBA5300578A1C /* libmkv.a */; };
 		42508B15171333850068025D /* qhfc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 42508B13171333850068025D /* qhfc.cpp */; };
+		4262336F17158C2900D3117E /* qhfc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 42508B13171333850068025D /* qhfc.cpp */; };
+		4262337117158C2900D3117E /* libea.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 429B1C7B162DBA5300578A1C /* libea.a */; };
+		4262337217158C2900D3117E /* libmkv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 429B1C7C162DBA5300578A1C /* libmkv.a */; };
+		4262337C17158C5F00D3117E /* nsga2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4262337A17158C5F00D3117E /* nsga2.cpp */; };
 		4281FF0B16C70BF00066610C /* libea.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 429B1C7B162DBA5300578A1C /* libea.a */; };
 		4281FF1416C70C1C0066610C /* lod_tracking.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4281FF1216C70C1C0066610C /* lod_tracking.cpp */; };
 		429B1C7D162DBA5300578A1C /* libea.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 429B1C7B162DBA5300578A1C /* libea.a */; };
@@ -51,6 +56,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 42508B06171333410068025D;
 			remoteInfo = qhfc;
+		};
+		4262337817158C4500D3117E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 429B1C41162DB8DE00578A1C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4262336D17158C2900D3117E;
+			remoteInfo = nsga2;
 		};
 		4281FF0416C70A9E0066610C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -108,6 +120,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		4262337317158C2900D3117E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		4281FF0C16C70BF00066610C /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -153,6 +174,8 @@
 		42508B10171333410068025D /* qhfc */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = qhfc; sourceTree = BUILT_PRODUCTS_DIR; };
 		42508B13171333850068025D /* qhfc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = qhfc.cpp; sourceTree = "<group>"; };
 		42508B16171336330068025D /* qhfc.cfg */ = {isa = PBXFileReference; lastKnownFileType = text; path = qhfc.cfg; sourceTree = "<group>"; };
+		4262337717158C2900D3117E /* nsga2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = nsga2; sourceTree = BUILT_PRODUCTS_DIR; };
+		4262337A17158C5F00D3117E /* nsga2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = nsga2.cpp; sourceTree = "<group>"; };
 		4281FF1016C70BF00066610C /* lod_tracking */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = lod_tracking; sourceTree = BUILT_PRODUCTS_DIR; };
 		4281FF1216C70C1C0066610C /* lod_tracking.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lod_tracking.cpp; sourceTree = "<group>"; };
 		429B1C4A162DB8DF00578A1C /* markov_network */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = markov_network; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -187,6 +210,15 @@
 			files = (
 				42508B0A171333410068025D /* libea.a in Frameworks */,
 				42508B0B171333410068025D /* libmkv.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4262337017158C2900D3117E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4262337117158C2900D3117E /* libea.a in Frameworks */,
+				4262337217158C2900D3117E /* libmkv.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,6 +280,7 @@
 				423FAA5716C29E5400D832FB /* digital_evolution */,
 				4281FF1016C70BF00066610C /* lod_tracking */,
 				42508B10171333410068025D /* qhfc */,
+				4262337717158C2900D3117E /* nsga2 */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -274,6 +307,7 @@
 				429B1CA8162ED84E00578A1C /* markov_network.cpp */,
 				423FAA5B16C29EC400D832FB /* digital_evolution.cpp */,
 				42508B13171333850068025D /* qhfc.cpp */,
+				4262337A17158C5F00D3117E /* nsga2.cpp */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -322,6 +356,23 @@
 			name = qhfc;
 			productName = template;
 			productReference = 42508B10171333410068025D /* qhfc */;
+			productType = "com.apple.product-type.tool";
+		};
+		4262336D17158C2900D3117E /* nsga2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4262337417158C2900D3117E /* Build configuration list for PBXNativeTarget "nsga2" */;
+			buildPhases = (
+				4262336E17158C2900D3117E /* Sources */,
+				4262337017158C2900D3117E /* Frameworks */,
+				4262337317158C2900D3117E /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = nsga2;
+			productName = template;
+			productReference = 4262337717158C2900D3117E /* nsga2 */;
 			productType = "com.apple.product-type.tool";
 		};
 		4281FF0716C70BF00066610C /* lod_tracking */ = {
@@ -419,6 +470,7 @@
 				423FAA4D16C29E5400D832FB /* digital_evolution */,
 				4281FF0716C70BF00066610C /* lod_tracking */,
 				42508B06171333410068025D /* qhfc */,
+				4262336D17158C2900D3117E /* nsga2 */,
 				429B1CBF162EDCEA00578A1C /* all */,
 			);
 		};
@@ -438,6 +490,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				42508B15171333850068025D /* qhfc.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4262336E17158C2900D3117E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4262336F17158C2900D3117E /* qhfc.cpp in Sources */,
+				4262337C17158C5F00D3117E /* nsga2.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,6 +541,11 @@
 			isa = PBXTargetDependency;
 			target = 42508B06171333410068025D /* qhfc */;
 			targetProxy = 42508B11171333510068025D /* PBXContainerItemProxy */;
+		};
+		4262337917158C4500D3117E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4262336D17158C2900D3117E /* nsga2 */;
+			targetProxy = 4262337817158C4500D3117E /* PBXContainerItemProxy */;
 		};
 		4281FF0516C70A9E0066610C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -543,6 +609,28 @@
 			name = Debug;
 		};
 		42508B0F171333410068025D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../DerivedData/research/Build/Products/Debug\"",
+				);
+				PRODUCT_NAME = $TARGET_NAME;
+			};
+			name = Release;
+		};
+		4262337517158C2900D3117E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../DerivedData/research/Build/Products/Debug\"",
+				);
+				PRODUCT_NAME = $TARGET_NAME;
+			};
+			name = Debug;
+		};
+		4262337617158C2900D3117E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				LIBRARY_SEARCH_PATHS = (
@@ -694,6 +782,15 @@
 			buildConfigurations = (
 				42508B0E171333410068025D /* Debug */,
 				42508B0F171333410068025D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4262337417158C2900D3117E /* Build configuration list for PBXNativeTarget "nsga2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4262337517158C2900D3117E /* Debug */,
+				4262337617158C2900D3117E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
