@@ -40,12 +40,12 @@ struct example_fitness : fitness_function<unary_fitness<double>, constantS, stoc
 	double operator()(Individual& ind, RNG& rng, EA& ea) {
         using namespace mkv;
         
-        markov_network net(make_markov_network_desc(get<MKV_DESC>(ea)), rng);
+        markov_network net(make_markov_network_desc(get<MKV_DESC>(ea)), rng.seed());
 
         // build a markov network from the individual's genome:
         mkv::build_markov_network(net, ind.repr().begin(), ind.repr().end(), ea);
         
-        // allocate space for the inputs & outputs:
+        // allocate space for the inputs:
         std::vector<int> inputs(net.ninput_states(), 0);
         
         // now, set the values of the bits in the input vector:
