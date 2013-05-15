@@ -45,18 +45,25 @@ struct example_fitness : fitness_function<unary_fitness<double>, constantS, stoc
         // build a markov network from the individual's genome:
         mkv::build_markov_network(net, ind.repr().begin(), ind.repr().end(), ea);
         
-        // allocate space for the inputs:
-        std::vector<int> inputs(net.ninput_states(), 0);
         
         // now, set the values of the bits in the input vector:
-        
-        // update the network n times:
-        update(net, get<MKV_UPDATE_N>(ea), inputs.begin());
+        double f=0.0;
+        for(std::size_t i=0; i<32; ++i) {
+            // allocate space for the inputs:
+            std::vector<int> inputs;//(net.ninput_states(), 0);
+            inputs.push_back(rng.bit());
+            inputs.push_back(rng.bit());
+            
+            // update the network n times:
+            update(net, get<MKV_UPDATE_N>(ea), inputs.begin());
+            
+            if(*net.begin_output() == (inputs[0] && inputs[1])) {
+                ++f;
+            }
+        }
 
-        // calculate fitness based on the outputs...
-        
         // and return some measure of fitness:
-        return 1.0;
+        return f;
     }
 };
 
