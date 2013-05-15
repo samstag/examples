@@ -48,16 +48,17 @@ struct example_fitness : fitness_function<unary_fitness<double>, constantS, stoc
         
         // now, set the values of the bits in the input vector:
         double f=0.0;
-        for(std::size_t i=0; i<32; ++i) {
+        for(std::size_t i=0; i<128; ++i) {
             // allocate space for the inputs:
             std::vector<int> inputs;//(net.ninput_states(), 0);
             inputs.push_back(rng.bit());
             inputs.push_back(rng.bit());
             
             // update the network n times:
+            net.clear();
             update(net, get<MKV_UPDATE_N>(ea), inputs.begin());
             
-            if(*net.begin_output() == (inputs[0] && inputs[1])) {
+            if(*net.begin_output() == (inputs[0] ^ inputs[1])) {
                 ++f;
             }
         }
@@ -126,6 +127,12 @@ public:
         add_option<CHECKPOINT_PREFIX>(this);
         add_option<RNG_SEED>(this);
         add_option<RECORDING_PERIOD>(this);
+    }
+    
+    
+    virtual void gather_tools() {
+        add_tool<mkv::mkv_genetic_graph>(this);
+        add_tool<mkv::mkv_reduced_graph>(this);
     }
     
     virtual void gather_events(EA& ea) {

@@ -61,6 +61,10 @@
       <CommandLineArguments>
          <CommandLineArgument
             argument = "-c ../etc/markov_network.cfg --ea.rng.seed=1 --with-time"
+            isEnabled = "NO">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "-l checkpoint-100.xml --analyze mkv_genetic_graph"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>
