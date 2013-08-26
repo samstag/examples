@@ -57,12 +57,12 @@ struct configuration : public abstract_configuration<EA> {
  */
 typedef evolutionary_algorithm<
 bitstring, // representation
-mutation::per_site<mutation::bitflip>, // mutation operator
+mutation::operators::per_site<mutation::site::bitflip>, // mutation operator
 all_ones, // fitness function
 configuration, // user-defined configuration methods
 recombination::asexual, // recombination operator
 generational_models::steady_state<selection::proportionate< >, selection::tournament< > >, // generational model
-default_attributes, // individual attributes
+attr::default_attributes, // individual attributes
 individual_lod // using an lod individual automatically turns on LOD tracking.
 > ea_type;
 
@@ -92,7 +92,7 @@ public:
     virtual void gather_events(EA& ea) {
         add_event<datafiles::fitness>(this, ea);
         add_event<lod_event>(this, ea);
-        add_event<mrca_lineage_datafile>(this, ea);
+        add_event<datafiles::mrca_lineage>(this, ea);
     };
 };
 

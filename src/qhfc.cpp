@@ -54,7 +54,7 @@ struct configuration : public abstract_configuration<EA> {
 
 typedef evolutionary_algorithm<
 bitstring,
-mutation::per_site<mutation::bit>,
+mutation::operators::per_site<mutation::site::bitflip>, // mutation operator
 all_ones,
 configuration,
 recombination::two_point_crossover,

@@ -70,23 +70,12 @@ struct example_fitness : fitness_function<unary_fitness<double>, constantS, stoc
 };
 
 
-/*! Configuration for an EA (one island).
- */
-template <typename EA>
-struct configuration : public abstract_configuration<EA> {
-    //! Called to generate the initial EA population.
-    void initial_population(EA& ea) {
-        generate_ancestors(mkv_random_individual(), get<POPULATION_SIZE>(ea), ea);
-    }
-};
-
-
 //! Evolutionary algorithm definition (one island).
 typedef evolutionary_algorithm<
-circular_genome<int>,
-mkv_mutation,
+mkv::representation_type,
+mkv::mutation_type,
 example_fitness,
-configuration,
+mkv::markov_network_configuration,
 recombination::asexual,
 generational_models::death_birth_process<selection::proportionate< >, selection::elitism<selection::random> >
 > ea_type;
@@ -111,13 +100,11 @@ class cli : public cmdline_interface<EA> {
 public:
     virtual void gather_options() {
         // markov network options
+        using namespace mkv;
         add_option<MKV_DESC>(this);
         add_option<MKV_UPDATE_N>(this);
         add_option<MKV_GATE_TYPES>(this);
         add_option<MKV_INITIAL_GATES>(this);
-        add_option<MKV_REPR_INITIAL_SIZE>(this);
-        add_option<MKV_REPR_MAX_SIZE>(this);
-        add_option<MKV_REPR_MIN_SIZE>(this);
         add_option<GATE_INPUT_LIMIT>(this);
         add_option<GATE_INPUT_FLOOR>(this);
         add_option<GATE_OUTPUT_LIMIT>(this);
@@ -126,14 +113,19 @@ public:
         add_option<GATE_HISTORY_FLOOR>(this);
         add_option<GATE_WV_STEPS>(this);
         
-        // ea options
-        add_option<REPRESENTATION_SIZE>(this);
-        add_option<POPULATION_SIZE>(this);
-        add_option<REPLACEMENT_RATE_P>(this);
+        add_option<REPRESENTATION_INITIAL_SIZE>(this);
+        add_option<REPRESENTATION_MIN_SIZE>(this);
+        add_option<REPRESENTATION_MAX_SIZE>(this);
         add_option<MUTATION_PER_SITE_P>(this);
+        add_option<MUTATION_UNIFORM_INT_MIN>(this);
         add_option<MUTATION_UNIFORM_INT_MAX>(this);
         add_option<MUTATION_DELETION_P>(this);
-        add_option<MUTATION_DUPLICATION_P>(this);
+        add_option<MUTATION_INSERTION_P>(this);
+        add_option<MUTATION_INDEL_MIN_SIZE>(this);
+        add_option<MUTATION_INDEL_MAX_SIZE>(this);
+
+        add_option<POPULATION_SIZE>(this);
+        add_option<REPLACEMENT_RATE_P>(this);
         add_option<RUN_UPDATES>(this);
         add_option<RUN_EPOCHS>(this);
         add_option<CHECKPOINT_OFF>(this);
